@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "这是一个UI框架",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev-test": "parcel watch test/* --no-cache & karma start",
+    "test": "parcel build test/* --no-minify && karma start --single-run"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yukiweng/gulu-demo.git"
