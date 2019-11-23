@@ -70,7 +70,6 @@ describe('Button', () => {
                 icon: 'settings',
             }
         }).$mount()
-
         const callback = sinon.fake();
         vm.$on('click', callback)
         vm.$el.click()
