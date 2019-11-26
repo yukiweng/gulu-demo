@@ -41,7 +41,9 @@
 <body>
 <div class="demo">
     <div class="box">
-        <g-input value="张三" @change.native="cons"></g-input>
+        <g-input v-model="msg"></g-input>
+        <p>{{msg}}</p>
+        <br>
         <g-input disabled value="李四"></g-input>
     </div>
     <div class="box">

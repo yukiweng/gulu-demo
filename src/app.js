@@ -13,12 +13,8 @@ new Vue({
     el: '.demo',
     data: {
         loading1: false,
-        loading2: false
-    },
-    methods:{
-        cons(e){
-            console.log(e);
-        }
+        loading2: false,
+        msg:'hi,张三'
     }
 
 })

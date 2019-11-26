@@ -54,13 +54,17 @@ describe('Input', () => {
         afterEach(()=>{vm.$destroy()})
         it('可以触发change/input/focus/blur', () => {
             ['change','input','focus','blur'].forEach((eventName)=>{
-                vm=new Constructor().$mount()
+                vm = new Constructor({
+                    propsData: {
+                        value: '123'
+                    }
+                }).$mount()
                 const callback=sinon.fake()
                 vm.$on(eventName,callback)
                 let event=new Event(eventName)
                 let inputElement=vm.$el.querySelector('input')
                 inputElement.dispatchEvent(event)
-                expect(callback).to.have.been.calledWith(event)
+                expect(callback).to.have.been.calledWith('123')
             })
         })
     })
