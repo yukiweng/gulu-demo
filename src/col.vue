@@ -4,13 +4,17 @@
     </div>
 </template>
 
-<script></script>
+<script>
+    export default {
+        name:'g-col'
+    }
+</script>
 
 <style lang="scss" scoped>
     .col {
         border: 1px solid green;
         background: grey;
-        width: 50%;
+        width:100%;
         $class-prefix: col-;
         @for $n from 1 through 24 {
             &.#{$class-prefix}#{$n} {

@@ -1,5 +1,5 @@
 <template>
-    <div class="row" :class="gutter && `gutter-${gutter}`">
+    <div class="row" :class="[gutter && `gutter-${gutter}`,align && `align-${align}` ]">
         <slot></slot>
     </div>
 </template>
@@ -7,7 +7,16 @@
 <script>
     export default {
         name: 'g-row',
-        props: ['gutter']
+        props: {
+            'gutter':[String,Number],
+            'align':{
+                type:String,
+                default:'center',
+                validator:(value)=>{
+                    return value=='left'||value=='right'||value=='center'
+                }
+            }
+        }
     }
 
 </script>
@@ -16,6 +25,7 @@
     .row {
         display: flex;
         height: 100px;
+        background: goldenrod;
         $class-prefix: gutter-;
         @for $n from 1 through 24 {
             &.#{$class-prefix}#{$n} {
@@ -24,6 +34,15 @@
                 }
 
             }
+        }
+        &.align-left{
+            justify-content: flex-start;
+        }
+        &.align-right{
+            justify-content: flex-end;
+        }
+        &.align-center{
+            justify-content: center;
         }
     }
 </style>
