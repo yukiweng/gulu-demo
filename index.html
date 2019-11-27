@@ -40,6 +40,28 @@
 </head>
 <body>
 <div class="demo">
+
+    <g-row gutter="20">
+        <g-col></g-col>
+        <g-col></g-col>
+    </g-row>
+        <g-row gutter="20">
+            <g-col></g-col>
+            <g-col></g-col>
+            <g-col></g-col>
+            <g-col></g-col>
+        </g-row>
+    <g-row>
+        <g-col class="col-2"></g-col>
+        <g-col class="col-20 offset-2"></g-col>
+    </g-row>
+    <g-row>
+        <g-col class="col-2"></g-col>
+        <g-col class="col-6 offset-4"></g-col>
+        <g-col class="col-8 offset-4"></g-col>
+    </g-row>
+
+
     <div class="box">
         <g-input v-model="msg"></g-input>
         <p>{{msg}}</p>
