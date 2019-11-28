@@ -1,5 +1,5 @@
 <template>
-    <div class="row" :class="[gutter && `gutter-${gutter}`,align && `align-${align}` ]">
+    <div class="row" :class="[gutter && `gutter-${gutter}`,align && `align-${align}` ]" :style="rowStyle">
         <slot></slot>
     </div>
 </template>
@@ -8,14 +8,25 @@
     export default {
         name: 'g-row',
         props: {
-            'gutter':[String,Number],
-            'align':{
+            gutter:[String,Number],
+            align:{
                 type:String,
                 default:'center',
                 validator:(value)=>{
                     return value=='left'||value=='right'||value=='center'
                 }
             }
+        },
+        computed:{
+            rowStyle() {
+                let gutter = this.gutter
+                return {marginLeft:-this.gutter/2+'px',marginRight:-this.gutter/2+'px'}
+            }
+        },
+        mounted() {
+            this.$children.forEach((vm)=>{
+                vm.gutter=this.gutter
+            })
         }
     }
 
@@ -24,17 +35,9 @@
 <style lang="scss" scoped>
     .row {
         display: flex;
+        flex-wrap: wrap;
         height: 100px;
-        background: goldenrod;
-        $class-prefix: gutter-;
-        @for $n from 1 through 24 {
-            &.#{$class-prefix}#{$n} {
-                & > *:not(:last-child) {
-                    margin-right: #{$n}px
-                }
 
-            }
-        }
         &.align-left{
             justify-content: flex-start;
         }

@@ -39,39 +39,36 @@
 
 </head>
 <body>
+<style>
+    .xxx{
+        background: grey;
+        border: 1px solid black;
+        height: 100%;
+    }
+</style>
 <div class="demo">
-
     <g-row gutter="20">
-        <g-col>
-            <g-row>
-                <g-col class="col-2">1</g-col>
-                <g-col class="col-2">2</g-col>
-                <g-col class="col-2">3</g-col>
-            </g-row>
-        </g-col>
-        <g-col>
-            <g-row align="right">
-                <g-col class="col-2">1</g-col>
-                <g-col class="col-2">2</g-col>
-                <g-col class="col-2">3</g-col>
-            </g-row>
+        <g-col span="12"><div class="xxx"></div></g-col>
+        <g-col span="12"><div class="xxx"></div></g-col>
+    </g-row>
+    <g-row gutter="20">
+        <g-col span="12"></g-col>
+        <g-col span="12"></g-col>
+    </g-row>
 
+    <g-row align="left">
+        <g-col span="24" :ipad="{span:12}" :pc="{span:6}" :wide-pc="{span:2}">
+            <div class="xxx"></div>
         </g-col>
-    </g-row>
-        <g-row gutter="20">
-            <g-col>1</g-col>
-            <g-col>2</g-col>
-            <g-col>3</g-col>
-            <g-col>4</g-col>
-        </g-row>
-    <g-row>
-        <g-col class="col-2">1</g-col>
-        <g-col class="col-20 offset-2">2</g-col>
-    </g-row>
-    <g-row>
-        <g-col class="col-2">1</g-col>
-        <g-col class="col-6 offset-4">2</g-col>
-        <g-col class="col-8 offset-4">3</g-col>
+        <g-col span="24" :ipad="{span:12}" :pc="{span:6}" :wide-pc="{span:2,offset:4}">
+            <div class="xxx"></div>
+        </g-col>
+        <g-col span="24" :ipad="{span:12}" :pc="{span:6}" :wide-pc="{span:2,offset:4}">
+            <div class="xxx"></div>
+        </g-col>
+        <g-col span="24" :ipad="{span:12}" :pc="{span:6}" :wide-pc="{span:2,offset:4}">
+            <div class="xxx"></div>
+        </g-col>
     </g-row>
 
 
