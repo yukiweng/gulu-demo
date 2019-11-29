@@ -28,7 +28,7 @@
         .demo {
             max-width: 980px;
             max-height: 600px;
-            margin: 100px auto;
+            margin:auto;
             padding: 20px
         }
 
@@ -37,62 +37,31 @@
         }
     </style>
 
+    <style>
+        .test{
+            border:1px solid #666;
+        }
+    </style>
 </head>
 <body>
-<style>
-    .xxx{
-        background: grey;
-        border: 1px solid black;
-        height: 100%;
-    }
-</style>
 <div class="demo">
-    <g-row gutter="20">
-        <g-col span="12"><div class="xxx"></div></g-col>
-        <g-col span="12"><div class="xxx"></div></g-col>
-    </g-row>
-    <g-row gutter="20">
-        <g-col span="12"></g-col>
-        <g-col span="12"></g-col>
-    </g-row>
 
-    <g-row align="left">
-        <g-col span="24" :ipad="{span:12}" :pc="{span:6}" :wide-pc="{span:2}">
-            <div class="xxx"></div>
-        </g-col>
-        <g-col span="24" :ipad="{span:12}" :pc="{span:6}" :wide-pc="{span:2,offset:4}">
-            <div class="xxx"></div>
-        </g-col>
-        <g-col span="24" :ipad="{span:12}" :pc="{span:6}" :wide-pc="{span:2,offset:4}">
-            <div class="xxx"></div>
-        </g-col>
-        <g-col span="24" :ipad="{span:12}" :pc="{span:6}" :wide-pc="{span:2,offset:4}">
-            <div class="xxx"></div>
-        </g-col>
-    </g-row>
+    <g-layout>
+        <g-header class="test">header</g-header>
+        <g-layout>
+            <g-sider class="test">sider</g-sider>
+            <g-layout>
+                <g-header class="test" height="120">header</g-header>
+                <g-layout>
+                <g-sider class="test" width="150">sider</g-sider>
+                <g-content class="test">content</g-content>
+                </g-layout>
+            </g-layout>
+        </g-layout>
+        <g-footer class="test">footer</g-footer>
+    </g-layout>
+    <br>
 
-
-    <div class="box">
-        <g-input v-model="msg"></g-input>
-        <p>{{msg}}</p>
-        <br>
-        <g-input disabled value="李四"></g-input>
-    </div>
-    <div class="box">
-        <g-input value="王" error="姓名不能少于两个字"></g-input>
-    </div>
-    <div class="box">
-        <g-button :loading="loading1" icon="setting" @click="loading1=!loading1">
-            按钮
-        </g-button>
-        <g-button :loading="loading2" icon="setting" icon-position="right" @click.native="loading2=!loading2">
-            按钮
-        </g-button>
-        <g-button-group>
-            <g-button icon="left">上一页</g-button>
-            <g-button>更多</g-button>
-            <g-button icon="right" icon-position="right">下一页</g-button>
-        </g-button-group>
     </div>
 </div>
 
