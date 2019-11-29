@@ -1,6 +1,6 @@
 <template>
     <div v-if="show" class="sider" :style=`width:${width}px`>
-        <button class="closeButton" @click="remove">close</button>
+        <g-icon v-if="deleteButton" name="delete" @click.native="remove" class="close"></g-icon>
         <slot></slot>
     </div>
 </template>
@@ -15,6 +15,10 @@
             width: {
                 type: [String, Number],
                 default: 200
+            },
+            deleteButton:{
+                type:Boolean,
+                default: false
             }
         },
         methods:{
@@ -28,10 +32,10 @@
 <style lang="scss" scoped>
     .sider {
         position: relative;
-        > .closeButton {
+        > .close {
             position: absolute;
-            top:0;
-            right:0
+            top:4px;
+            right:4px
         }
     }
 
