@@ -32,36 +32,13 @@
             padding: 20px
         }
 
-        .box {
-            margin: 20px
-        }
     </style>
 
-    <style>
-        .test {
-            border: 1px solid #666;
-        }
-    </style>
 </head>
 <body>
 <div class="demo">
+<button @click="$toast('hahah')">点我</button>
 
-    <g-layout>
-        <g-header class="test">header</g-header>
-        <g-layout>
-            <g-sider class="test" :delete-button="true">sider
-            </g-sider>
-            <g-layout>
-                <g-header class="test" height="120">header</g-header>
-                <g-layout>
-                    <g-sider class="test" width="150">sider</g-sider>
-                    <g-content class="test">content</g-content>
-                </g-layout>
-            </g-layout>
-        </g-layout>
-        <g-footer class="test">footer</g-footer>
-    </g-layout>
-    <br>
 
 </div>
 </div>
