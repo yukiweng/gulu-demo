@@ -34,8 +34,19 @@ new Vue({
         loading1: false,
         loading2: false,
         msg:'hi,张三'
+    },
+    created(){
+        this.$toast('我是message哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈 我是message哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈',{
+            close:{
+              autoClose:true,
+                autoCloseDelay:3
+            },
+            closeButton:{
+                text:'关闭',
+                callback(){console.log('用户点击关闭了')}
+            }
+        })
     }
-
 })
 
 
