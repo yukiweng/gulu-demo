@@ -50,8 +50,7 @@ new Vue({
             this.$toast(`${parseInt(Math.random()*100)}岁的黑猫警长ooo`, {
                 position: position,
                 enableHtml: false,
-                autoClose: true,
-                autoCloseDelay: 10,
+                autoClose: 2,
                 closeButton: {
                     text: '关闭',
                     callback() {
