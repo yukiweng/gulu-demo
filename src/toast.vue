@@ -1,5 +1,6 @@
 <template>
-    <div class="toast">
+    <div class="toast" :class=`position-${position}`>
+        <div v-if="enableHtml" v-html="$slots.default[0]"></div>
         <slot></slot>
         <div v-if="closeButton" class="line" ref="line"></div>
         <span v-if="closeButton" class="close" @click="onClickClose" ref="button">{{closeButton.text}}</span>
@@ -11,6 +12,10 @@
     export default {
         name: 'g-toast',
         props: {
+            enableHtml:{
+              type:Boolean,
+              default:false
+            },
             autoClose: {
                 type: Boolean,
                 default: true,
@@ -21,6 +26,13 @@
             },
             closeButton: {
                 type: Object
+            },
+            position:{
+                type:String,
+                default:'top',
+                validator(value){
+                    return ['top','middle','bottom'].indexOf(value)>=0
+                }
             }
         },
         mounted() {
@@ -87,5 +99,16 @@
             height: 100%;
             margin-left: 4px;
         }
+        &.position-top{
+            top:0
+        }
+        &.position-middle{
+            top:50%;
+            transform:translate(-50%,-50%);
+        }
+        &.position-bottom{
+            bottom:0
+        }
+
     }
 </style>
