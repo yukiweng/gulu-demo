@@ -1,20 +1,21 @@
 <template>
-    <div class="toast" :class=`position-${position}`>
-        <div v-if="enableHtml" v-html="$slots.default[0]"></div>
-        <slot></slot>
-        <div v-if="closeButton" class="line" ref="line"></div>
-        <span v-if="closeButton" class="close" @click="onClickClose" ref="button">{{closeButton.text}}</span>
+    <div class="wrapper" :class=`position-${position}`>
+        <div class="toast">
+            <div v-if="enableHtml" v-html="$slots.default[0]"></div>
+            <slot></slot>
+            <div v-if="closeButton" class="line" ref="line"></div>
+            <span v-if="closeButton" class="close" @click="onClickClose" ref="button">{{closeButton.text}}</span>
+        </div>
     </div>
-
 </template>
 
 <script>
     export default {
         name: 'g-toast',
         props: {
-            enableHtml:{
-              type:Boolean,
-              default:false
+            enableHtml: {
+                type: Boolean,
+                default: false
             },
             autoClose: {
                 type: Boolean,
@@ -27,11 +28,11 @@
             closeButton: {
                 type: Object
             },
-            position:{
-                type:String,
-                default:'top',
-                validator(value){
-                    return ['top','middle','bottom'].indexOf(value)>=0
+            position: {
+                type: String,
+                default: 'top',
+                validator(value) {
+                    return ['top', 'middle', 'bottom'].indexOf(value) >= 0
                 }
             }
         },
@@ -50,7 +51,7 @@
             updateStyle() {
                 this.$nextTick(() => {
                     this.$refs.line.style.height = getComputedStyle(this.$el).height
-                    this.$refs.button.style.lineHeight=getComputedStyle(this.$el).height
+                    this.$refs.button.style.lineHeight = getComputedStyle(this.$el).height
                 })
             },
             close() {
@@ -74,6 +75,37 @@
     $toast-bg: rgba(0, 0, 0, 0.6);
     $toast-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
     $toast-color: white;
+    $animation-duration:0.5s;
+    @keyframes slide-down {
+        0% {opacity: 0;transform: translateY(-100%)}
+        100% {opacity: 1;transform: translateY(0)}
+    }
+    @keyframes fade-in {
+        0% {opacity: 0}
+        100% {opacity: 1}
+    }
+    @keyframes slide-up {
+        0% {opacity: 0;transform: translateY(100%)}
+        100% {opacity: 1;transform: translateY(0)}
+    }
+    .wrapper {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        &.position-top {
+            top: 0;
+            > .toast {animation: slide-down $animation-duration;}
+        }
+        &.position-middle {
+            top: 50%;
+            transform: translate(-50%, -50%);
+            > .toast {animation: fade-in $animation-duration;}
+        }
+        &.position-bottom {
+            bottom: 0;
+            > .toast {animation: slide-up $animation-duration;}
+        }
+    }
     .toast {
         line-height: 1.8;
         min-height: 40px;
@@ -83,32 +115,16 @@
         color: $toast-color;
         border-radius: 4px;
         padding: 0px 12px;
-        position: fixed;
-        left: 50%;
-        transform: translateX(-50%);
         display: flex;
         align-items: center;
-
         > .close {
             margin-left: 12px;
             flex-shrink: 0;
         }
-
         > .line {
             border-left: 1px solid #999;
             height: 100%;
             margin-left: 4px;
         }
-        &.position-top{
-            top:0
-        }
-        &.position-middle{
-            top:50%;
-            transform:translate(-50%,-50%);
-        }
-        &.position-bottom{
-            bottom:0
-        }
-
     }
 </style>

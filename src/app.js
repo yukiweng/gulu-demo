@@ -37,9 +37,18 @@ new Vue({
         msg: 'hi,张三'
     },
     methods: {
-        showToast() {
+        showToast1(){
+            this.showToast('top')
+        },
+        showToast2(){
+            this.showToast('middle')
+        },
+        showToast3(){
+            this.showToast('bottom')
+        },
+        showToast(position) {
             this.$toast(`${parseInt(Math.random()*100)}岁的黑猫警长ooo`, {
-                position: 'middle',
+                position: position,
                 enableHtml: false,
                 autoClose: true,
                 autoCloseDelay: 10,
