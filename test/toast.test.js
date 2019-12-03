@@ -13,9 +13,6 @@ describe('Toast', () => {
     describe('props', () => {
         const Constructor = Vue.extend(Toast)
         let vm
-        afterEach(() => {
-            vm.$destroy()
-        })
         it('接收enableHtml', () => {
             vm = new Constructor({
                 propsData: {
@@ -39,7 +36,6 @@ describe('Toast', () => {
                 expect(document.body.contains(vm.$el)).to.eq(false)
                 done()
             })
-            vm.$el.remove()
         })
         it('接收closeButton', () => {
             const callback = sinon.fake()
@@ -65,7 +61,6 @@ describe('Toast', () => {
                 }
             }).$mount(div)
             expect(getComputedStyle(vm.$el).bottom).to.eq('0px')
-            vm.$el.remove()
         })
     })
 })
