@@ -9,8 +9,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
-
         :root {
             --button-height: 32px;
             --font-size: 14px;
@@ -21,22 +19,29 @@
             --border-color: #999;
             --border-hover-color: #666;
         }
-
         body {
             font-size: var(--font-size);
         }
-
-
-
     </style>
 
 </head>
 <body>
 <div class="demo">
-<button @click="showToast1()">点我</button>
-    <button @click="showToast2()">点我</button>
-    <button @click="showToast3()">点我</button>
-</div>
+<g-tabs :selected.sync="selectedTab" position="vertical">
+    <g-tabs-head>
+        <template slot="actions">
+                <g-button>设置</g-button>
+        </template>
+        <g-tabs-item name="entertainment">
+            <g-icon name="loading"></g-icon>娱乐
+        </g-tabs-item>
+        <g-tabs-item name="comic">动漫</g-tabs-item>
+    </g-tabs-head>
+    <g-tabs-body>
+        <g-tabs-pane name="entertainment">娱乐新闻</g-tabs-pane>
+        <g-tabs-pane name="comic">动漫资讯</g-tabs-pane>
+    </g-tabs-body>
+</g-tabs>
 </div>
 
 <script src="./src/app.js"></script>
