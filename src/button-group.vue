@@ -11,7 +11,7 @@
             for (let node of this.$el.children){
                 let name=node.nodeName.toLowerCase()
                 if(name!=='button'){
-                    console.log('warn:g-button-group的子元素只允许button类型，你输入的类型是'+name)
+                    console&&console.warn&&console.warn('g-button-group的子元素只允许button类型，你输入的类型是'+name)
                 }
             }
         }

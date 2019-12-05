@@ -1,5 +1,5 @@
 <template>
-    <div class="tabsItem" @click="clickItem" :class="classes">
+    <div class="tabsItem" @click="clickItem" :class="classes" :data-name="name">
         <slot></slot>
     </div>
 </template>
@@ -18,9 +18,9 @@
             }
         },
         created() {
-            this.eventBus.$on('update:selected',(name,vm)=>{
-                this.active = this.name === name;
-            })
+                this.eventBus && this.eventBus.$on('update:selected', (name, vm) => {
+                    this.active = this.name === name;
+                })
         },
         computed:{
             classes(){
@@ -29,7 +29,7 @@
         },
         methods:{
             clickItem(){
-                this.eventBus.$emit('update:selected',this.name,this)
+                this.eventBus && this.eventBus.$emit('update:selected',this.name,this)
             }
         }
     }

@@ -1,5 +1,5 @@
 <template>
-    <div class="tabsHead" :class="position">
+    <div class="tabsHead" :class="direction">
         <slot></slot>
         <div class="actions">
             <slot name="actions"></slot>
@@ -14,16 +14,16 @@
         name: 'g-tabs-head',
         inject: ['eventBus'],
         data() {
-            return {position: 'horizontal'}
+            return {direction: 'horizontal'}
         },
         mounted() {
             this.eventBus.$on('update:selected', (name, vm) => {
                 this.$nextTick(() => {
                     let {width, height, top, left} = vm.$el.getBoundingClientRect()
-                    if (this.position == 'horizontal') {
+                    if (this.direction == 'horizontal') {
                         this.$refs.line.style.width = `${width}px`
                         this.$refs.line.style.left = `${left}px`
-                    } else if (this.position == 'vertical') {
+                    } else if (this.direction == 'vertical') {
                         this.$refs.line.style.top = `${top}px`
                         this.$refs.line.style.height = `${height}px`
                     }
