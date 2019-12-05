@@ -1,6 +1,6 @@
 # 一个 Vue UI 组件
 [![Build Status](https://www.travis-ci.org/yukiweng/gulu-demo.svg?branch=master)](https://www.travis-ci.org/yukiweng/gulu-demo)
-##介绍
+## 介绍
 一个简单的UI框架，仿 轱辘UI
 ## 开始使用
 1. 添加CSS样式
