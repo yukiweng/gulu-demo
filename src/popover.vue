@@ -1,5 +1,5 @@
 <template>
-    <div class="popover" @click="onClick" ref="popover">
+    <div class="popover" ref="popover">
         <div class="contentWrapper" v-if="visible" ref="contentWrapper" :class=`position-${position}`>
             <slot name="content"></slot>
         </div>
@@ -25,7 +25,29 @@
               validator(value){
                   return ['top','bottom','left','right'].indexOf(value)>=0
               }
+          },
+            trigger:{
+              type:String,
+                default: 'click',
+                validator(value) {
+                    return ['click','hover'].indexOf(value)>=0
+                }
+            }
+        },
+        mounted(){
+          if(this.trigger==='click'){
+              console.log(this.trigger);
+              this.$refs.popover.addEventListener('click',this.onClick)
+          }else{
+              console.log(this.trigger);
+              this.$refs.popover.addEventListener('mouseenter',this.open)
+              this.$refs.popover.addEventListener('mouseleave',this.close)
           }
+        },
+        destroyed(){
+            this.$refs.popover.removeEventListener('click',this.onClick)
+            this.$refs.popover.removeEventListener('mouseenter',this.open)
+            this.$refs.popover.removeEventListener('mouseleave',this.close)
         },
         methods: {
             positionContent() {
@@ -108,6 +130,7 @@ $border-radius:4px;
             margin-top:-10px;
             &::before,&::after{
                 left: 10px;
+                border-bottom: none;
             }
             &::before{
                 border-top-color:$border-color;
@@ -116,13 +139,13 @@ $border-radius:4px;
             &::after{
                 border-top-color:white;
                 top: calc(100% - 1px);
-
             }
         }
         &.position-bottom{
             margin-top:10px;
             &::before,&::after{
                 left: 10px;
+                border-top: none;
             }
             &::before{
                 border-bottom-color:$border-color;
@@ -131,13 +154,13 @@ $border-radius:4px;
             &::after{
                 border-bottom-color:white;
                 bottom: calc(100% - 1px);
-
             }
         }
         &.position-left{
             transform: translateX(-100%);
             margin-left: -10px;
             &::before,&::after{
+                border-right: none;
                 transform: translateY(-50%);
                 top:50%;
             }
@@ -148,12 +171,12 @@ $border-radius:4px;
             &::after{
                 border-left-color:white;
                 left: calc(100% - 1px);
-
             }
         }
         &.position-right{
             margin-left: 10px;
             &::before,&::after{
+                border-left: none;
                 transform: translateY(-50%);
                 top:50%;
             }
@@ -164,7 +187,6 @@ $border-radius:4px;
             &::after{
                 border-right-color:white;
                 right: calc(100% - 1px);
-
             }
         }
     }
