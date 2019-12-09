@@ -1,7 +1,7 @@
 <template>
     <div class="popover" ref="popover">
         <div class="contentWrapper" v-if="visible" ref="contentWrapper" :class=`position-${position}`>
-            <slot name="content"></slot>
+            <slot name="content" :close="close"></slot>
         </div>
         <span class="triggerWrapper" ref="triggerWrapper">
             <slot></slot>
@@ -36,10 +36,8 @@
         },
         mounted(){
           if(this.trigger==='click'){
-              console.log(this.trigger);
               this.$refs.popover.addEventListener('click',this.onClick)
           }else{
-              console.log(this.trigger);
               this.$refs.popover.addEventListener('mouseenter',this.open)
               this.$refs.popover.addEventListener('mouseleave',this.close)
           }

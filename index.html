@@ -29,8 +29,9 @@
 <div class="demo">
     <div style="padding:200px">
         <g-popover position="bottom">
-            <template slot="content">
-                <div>我是内容一我是内容一我是内容一我是内容一我是内容一我是内容一我是内容一我是内容一</div>
+            <template v-slot:content="{close}">
+                <div>我是内容一</div>
+                <g-button @click="close">关闭</g-button>
             </template>
             <g-button>点我</g-button>
         </g-popover>
