@@ -17,5 +17,6 @@
         width: 1em;
         height: 1em;
         fill:currentColor;
+        vertical-align: middle;
     }
 </style>
