@@ -1,5 +1,5 @@
 <template>
-    <div class="collapseItem" @click="click">
+    <div class="collapseItem" @click="click" :name="name">
         <span class="title" ref="title">
             {{title}}
             <span class="iconWrapper">
@@ -38,7 +38,7 @@
                     this.open()
                 }
             })
-            this.$parent.$on('update:selected', (name) => {
+            this.$parent && this.$parent.$on('update:selected', (name) => {
                 if (name != this.name) {
                     this.close()
                 }
