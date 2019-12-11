@@ -36,7 +36,6 @@
     .row {
         display: flex;
         flex-wrap: wrap;
-        height: 100px;
 
         &.align-left{
             justify-content: flex-start;

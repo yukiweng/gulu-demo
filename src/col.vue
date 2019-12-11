@@ -19,8 +19,8 @@
     export default {
         name: 'g-col',
         props: {
-            span: [String, Number],
-            offset: [String, Number],
+            span: [String,Number],
+            offset:[String,Number],
             ipad:{
                 type: Object,
                 validator
@@ -42,9 +42,13 @@
               let array=[]
               if(object.span){
                   array.push(`col-${str}${object.span}`)
+              }else if(object.span==0){
+                  array.push(`col-${str}0`)
               }
               if(object.offset){
                   array.push(`offset-${str}${object.offset}`)
+              }else if(object.offset==0){
+                  array.push(`offset-${str}0`)
               }
               return array
           }
@@ -73,26 +77,26 @@
 <style lang="scss" scoped>
     .col {
         $class-prefix: col-;
-        @for $n from 1 through 24 {
+        @for $n from 0 through 24 {
             &.#{$class-prefix}#{$n} {
                 width: ($n/24)*100%;
             }
         }
         $class-prefix: offset-;
-        @for $n from 1 through 24 {
+        @for $n from 0 through 24 {
             &.#{$class-prefix}#{$n} {
                 margin-left: ($n/24)*100%;
             }
         }
         @media(min-width: 768px) {
             $class-prefix: col-ipad-;
-            @for $n from 1 through 24 {
+            @for $n from 0 through 24 {
                 &.#{$class-prefix}#{$n} {
                     width: ($n/24)*100%;
                 }
             }
             $class-prefix: offset-ipad-;
-            @for $n from 1 through 24 {
+            @for $n from 0 through 24 {
                 &.#{$class-prefix}#{$n} {
                     margin-left: ($n/24)*100%;
                 }
@@ -100,13 +104,13 @@
         }
         @media(min-width: 992px) {
             $class-prefix: col-pc-;
-            @for $n from 1 through 24 {
+            @for $n from 0 through 24 {
                 &.#{$class-prefix}#{$n} {
                     width: ($n/24)*100%;
                 }
             }
             $class-prefix: offset-pc-;
-            @for $n from 1 through 24 {
+            @for $n from 0 through 24 {
                 &.#{$class-prefix}#{$n} {
                     margin-left: ($n/24)*100%;
                 }
@@ -114,13 +118,13 @@
         }
         @media(min-width: 1200px) {
             $class-prefix: col-wide-pc-;
-            @for $n from 1 through 24 {
+            @for $n from 0 through 24 {
                 &.#{$class-prefix}#{$n} {
                     width: ($n/24)*100%;
                 }
             }
             $class-prefix: offset-wide-pc-;
-            @for $n from 1 through 24 {
+            @for $n from 0 through 24 {
                 &.#{$class-prefix}#{$n} {
                     margin-left: ($n/24)*100%;
                 }
