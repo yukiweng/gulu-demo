@@ -43,6 +43,7 @@
         align-items: center;
         padding:0.5em 1em;
         cursor: pointer;
+        margin-bottom: 1em;
         &.active{
             color:$blue;
         }
