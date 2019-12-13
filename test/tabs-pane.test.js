@@ -1,6 +1,6 @@
 const expect = chai.expect;
 import Vue from 'vue'
-import TabsPane from "../src/tabs-pane"
+import TabsPane from "../src/tabs/tabs-pane"
 
 Vue.component('g-tabs-pane', TabsPane)
 

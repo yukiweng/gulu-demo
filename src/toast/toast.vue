@@ -1,8 +1,10 @@
 <template>
-    <div class="wrapper" :class=`position-${position}`>
+    <div class="toastWrapper" :class="`position-${position}`">
         <div class="toast">
             <div v-if="enableHtml" v-html="$slots.default[0]"></div>
-            <slot></slot>
+            <div v-else>
+                <slot></slot>
+            </div>
             <div v-if="closeButton" class="line" ref="line"></div>
             <span v-if="closeButton" class="close" @click="onClickClose" ref="button">{{closeButton.text}}</span>
         </div>
@@ -25,7 +27,7 @@
                 }
             },
             closeButton: {
-                type: Object
+                type: Object,
             },
             position: {
                 type: String,
@@ -89,7 +91,7 @@
         0% {opacity: 0;transform: translateY(100%)}
         100% {opacity: 1;transform: translateY(0)}
     }
-    .wrapper {
+    .toastWrapper {
         position: fixed;
         left: 50%;
         transform: translateX(-50%);
@@ -125,7 +127,7 @@
         > .line {
             border-left: 1px solid #999;
             height: 100%;
-            margin-left: 4px;
+            margin-left: 12px;
         }
     }
 </style>

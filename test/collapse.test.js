@@ -1,7 +1,7 @@
 const expect = chai.expect;
 import Vue from 'vue'
-import Collapse from '../src/collapse'
-import CollapseItem from '../src/collapse-item'
+import Collapse from '../src/collapse/collapse'
+import CollapseItem from '../src/collapse/collapse-item'
 
 Vue.config.productionTip = false
 Vue.config.devtools = false
@@ -28,6 +28,8 @@ describe('Collapse', () => {
             setTimeout(()=>{
                 let contentWrapper=vm.$refs.test.$el.querySelector('.contentWrapper')
                 expect(contentWrapper).to.exist
+                vm.$el.remove()
+                vm.$destroy()
                 done()
             },1500)
         })

@@ -16,8 +16,8 @@ describe('Popover', () => {
             const div=document.createElement('div')
             document.body.appendChild(div)
             div.innerHTML=`
-            <g-popover position="bottom">
-                <template slot="content">
+            <g-popover position="bottom" ref="popover">
+                <template v-slot:content>
                     <div>我是内容</div>
                 </template>
                 <button>按钮</button>
@@ -26,12 +26,13 @@ describe('Popover', () => {
             const vm=new Vue({
                 el:div
             })
+
             vm.$el.querySelector('button').click()
-            vm.$nextTick(()=>{
-                const contentWrapper=vm.$el.querySelector('.contentWrapper')
+            setTimeout(()=>{
+                const contentWrapper=document.body.querySelector('.contentWrapper')
                 expect(contentWrapper.classList.contains('position-bottom')).to.be.true
                 done()
-            })
+            },1500)
         })
         it('接收trigger',(done)=>{
             Vue.component('g-popover',Popover)

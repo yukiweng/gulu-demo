@@ -1,8 +1,8 @@
 const expect = chai.expect;
 import Vue from 'vue'
-import Tabs from '../src/tabs'
-import TabsHead from '../src/tabs-head'
-import TabsItem from "../src/tabs-item"
+import Tabs from '../src/tabs/tabs'
+import TabsHead from '../src/tabs/tabs-head'
+import TabsItem from "../src/tabs/tabs-item"
 
 Vue.component('g-tabs', Tabs)
 Vue.component('g-tabs-head', TabsHead)

@@ -1,12 +1,12 @@
 <template>
-    <div class="footer" :style=`height:${height}px`>
+    <div class="header" :style="`height:${height}px`">
         <slot></slot>
     </div>
 </template>
 
 <script>
     export default {
-        name:'g-footer',
+        name:'g-header',
         props:{
             height:{
                 type:[String,Number],
@@ -15,7 +15,3 @@
         }
     }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

@@ -1,6 +1,6 @@
 <template>
     <div class="popover" ref="popover">
-        <div class="contentWrapper" v-if="visible" ref="contentWrapper" :class=`position-${position}`>
+        <div class="contentWrapper" v-if="visible" ref="contentWrapper" :class="`position-${position}`">
             <slot name="content" :close="close"></slot>
         </div>
         <span class="triggerWrapper" ref="triggerWrapper">
@@ -35,19 +35,25 @@
             }
         },
         mounted(){
-          if(this.trigger==='click'){
-              this.$refs.popover.addEventListener('click',this.onClick)
-          }else{
-              this.$refs.popover.addEventListener('mouseenter',this.open)
-              this.$refs.popover.addEventListener('mouseleave',this.close)
-          }
+          this.addPopoverListener()
         },
-        destroyed(){
-            this.$refs.popover.removeEventListener('click',this.onClick)
-            this.$refs.popover.removeEventListener('mouseenter',this.open)
-            this.$refs.popover.removeEventListener('mouseleave',this.close)
+        beforeDestroy(){
+          this.removePopoverListener()
         },
         methods: {
+            addPopoverListener(){
+                if(this.trigger==='click'){
+                    this.$refs.popover.addEventListener('click',this.onClick)
+                }else{
+                    this.$refs.popover.addEventListener('mouseenter',this.open)
+                    this.$refs.popover.addEventListener('mouseleave',this.close)
+                }
+            },
+            removePopoverListener(){
+                this.$refs.popover.removeEventListener('click',this.onClick)
+                this.$refs.popover.removeEventListener('mouseenter',this.open)
+                this.$refs.popover.removeEventListener('mouseleave',this.close)
+            },
             positionContent() {
                 let {contentWrapper,triggerWrapper}=this.$refs
                 document.body.appendChild(contentWrapper)
@@ -78,15 +84,15 @@
                 if (this.$refs.popover && (this.$refs.popover === e.target || this.$refs.popover.contains(e.target))
                 ) {return}
                 if (this.$refs.contentWrapper && (this.$refs.contentWrapper === e.target || this.$refs.contentWrapper.contains(e.target))
-                ) {return}
+                ) {return;}
                 this.close()
             },
             open() {
-                this.visible=true
-                setTimeout(() => {
+                this.visible = true
+                this.$nextTick(() => {
                     this.positionContent()
                     document.addEventListener('click', this.onClickDocument)
-                }, 0)
+                })
             },
             close() {
                 this.visible = false

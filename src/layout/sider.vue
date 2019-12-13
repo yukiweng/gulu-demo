@@ -1,5 +1,5 @@
 <template>
-    <div v-if="show" class="sider" :style=`width:${width}px`>
+    <div v-if="show" class="sider" :style="`width:${width}px`">
         <g-icon v-if="deleteButton" name="delete" @click.native="remove" class="close"></g-icon>
         <slot></slot>
     </div>
@@ -38,5 +38,4 @@
             right:4px
         }
     }
-
 </style>

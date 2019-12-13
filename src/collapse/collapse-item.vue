@@ -14,7 +14,7 @@
 </template>
 
 <script>
-    import gIcon from "./icon"
+    import gIcon from "../icon"
     import Vue from 'vue'
     Vue.component('g-icon',gIcon)
     export default {

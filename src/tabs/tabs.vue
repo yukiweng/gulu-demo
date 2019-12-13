@@ -1,7 +1,6 @@
 <template>
     <div class="tabs" :class="direction">
         <slot></slot>
-
     </div>
 </template>
 
