@@ -1,5 +1,5 @@
 <template>
-    <div class="tabsHead" :class="direction">
+    <div class="tabsHead" :class="direction" ref="head">
         <slot></slot>
         <div class="actions">
             <slot name="actions"></slot>
@@ -20,11 +20,12 @@
             this.eventBus.$on('update:selected', (name, vm) => {
                 this.$nextTick(() => {
                     let {width, height, top, left} = vm.$el.getBoundingClientRect()
+                    let {top:top2, left:left2} = this.$refs.head.getBoundingClientRect()
                     if (this.direction == 'horizontal') {
                         this.$refs.line.style.width = `${width}px`
-                        this.$refs.line.style.left = `${left}px`
+                        this.$refs.line.style.left = `${left-left2}px`
                     } else if (this.direction == 'vertical') {
-                        this.$refs.line.style.top = `${top}px`
+                        this.$refs.line.style.top = `${top-top2}px`
                         this.$refs.line.style.height = `${height}px`
                     }
                 })
