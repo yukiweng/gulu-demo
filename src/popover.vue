@@ -38,7 +38,8 @@
           this.addPopoverListener()
         },
         beforeDestroy(){
-          this.removePopoverListener()
+            this.$refs.contentWrapper && this.$refs.contentWrapper.remove()
+            this.removePopoverListener()
         },
         methods: {
             addPopoverListener(){
