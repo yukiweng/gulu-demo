@@ -1,6 +1,6 @@
 {
-  "name": "yuki-gulu-ui",
-  "version": "1.0.1",
+  "name": "yuki-test",
+  "version": "0.0.2",
   "description": "这是一个UI框架",
   "main": "dist/index.js",
   "scripts": {
