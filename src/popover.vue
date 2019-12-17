@@ -136,7 +136,7 @@
                 border-bottom: none;
             }
             &::before{
-                border-top-color:$border-color;
+                border-top-color: $border-color;
                 top: 100%;
             }
             &::after{

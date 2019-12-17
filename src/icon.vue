@@ -8,10 +8,7 @@
     import './svg.js'
     export default {
         name: "g-icon",
-        props:['name'],
-        mounted() {
-            console.log('哈哈哈');
-        }
+        props:['name']
     }
 </script>
 
