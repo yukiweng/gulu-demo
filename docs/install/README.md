@@ -2,11 +2,11 @@
 ---
 1. 安装 yuki-gulu-ui
     ```
-    npm i --save yuki-gulu-ui
+    npm i --save yuki-gulu
     ```
-2. 引入 yuki-gulu-ui
+2. 引入 yuki-gulu
     ```
-    import {Button,ButtonGroup} from 'yuki-gulu-ui'
+    import {Button,ButtonGroup} from 'yuki-gulu'
     export default {
         name: 'App',
         components: {

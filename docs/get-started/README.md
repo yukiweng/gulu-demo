@@ -9,7 +9,7 @@ IE8及以上浏览器支持该样式
 
 引入scss文件
 ```js
-import 'yukiGulu/dist/yukiGulu.css'
+import 'yuki-gulu/dist/yukiGulu.css'
 ```
     
 

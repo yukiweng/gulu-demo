@@ -1,4 +1,4 @@
-# 一个 Vue UI 组件
+﻿# 一个 Vue UI 组件
 [![Build Status](https://www.travis-ci.org/yukiweng/gulu-demo.svg?branch=master)](https://www.travis-ci.org/yukiweng/gulu-demo)
 ## 介绍
 一个简单的UI框架
@@ -12,11 +12,11 @@
     
 2. 安装 yukiGulu
     ```
-    npm i --save yukiGulu
+    npm i --save yuki-gulu
     ```
-3. 引入 yukiGulu
+3. 引入 yuki-gulu
     ```
-    import {Button,ButtonGroup,Icon} from 'yuki-demo'
+    import {Button,ButtonGroup,Icon} from 'yuki-gulu'
     export default {
         name: 'App',
         components: {
@@ -28,7 +28,7 @@
     ```
 4. 引入yukiGulu.css
     ```js
-    import 'yukiGulu/dist/yukiGulu.css'
+    import 'yuki-gulu/dist/yukiGulu.css'
     ```
    
 **备注：**  
