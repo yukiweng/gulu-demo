@@ -113,8 +113,6 @@
 </script>
 
 <style lang="scss" scoped>
-$border-color:#333;
-$border-radius:4px;
     .contentWrapper {
         border: 1px solid $border-color;
         border-radius: $border-radius;
@@ -122,7 +120,7 @@ $border-radius:4px;
         padding: 0.5em 1em;
         position: absolute;
         word-break: break-all;
-        filter:drop-shadow(0 1px 1px rgba(0,0,0,0.5));
+        filter:drop-shadow(0 1px 1px $box-shadow-color);
         background: white;
         &::before,&::after{
             content: '';

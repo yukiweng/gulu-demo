@@ -31,14 +31,6 @@
 </script>
 
 <style lang="scss" scoped>
-        $button-height: 32px;
-        $font-size: 14px;
-        $color: #333;
-        $button-bg: #fff;
-        $button-active-bg: #eee;
-        $border-radius: 4px;
-        $border-color: #999;
-        $border-hover-color: #666;
     @keyframes spin {
         0%{tranform:rotate(0deg)}
          100%{transform:rotate(360deg)}
@@ -57,7 +49,7 @@
         vertical-align: middle;
 
         &:hover {
-            border-color: $border-hover-color;
+            border-color: $border-color-hover;
         } ;
 
         &:active {
@@ -73,6 +65,4 @@
     .loading{
         animation: spin 1s infinite linear;
     }
-
-
 </style>

@@ -66,8 +66,6 @@
 </script>
 
 <style lang="scss" scoped>
-    $border-radius:4px;
-    $border-color:#666;
     .collapseItem {
         border: 1px solid $border-color;
         &:first-child{

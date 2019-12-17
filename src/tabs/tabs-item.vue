@@ -36,7 +36,6 @@
 </script>
 
 <style lang="scss" scoped>
-    $blue:dodgerblue;
     .tabsItem{
         height: 100%;
         display: flex;
@@ -47,5 +46,4 @@
             color:$blue;
         }
     }
-
 </style>

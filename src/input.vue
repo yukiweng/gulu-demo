@@ -32,13 +32,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    $height:32px;
-    $border-color:#999;
-    $border-color-hover:#666;
-    $border-radius:4px;
-    $font-size:14px;
-    $box-shadow-color:rgba(0,0,0,0.5);
-    $red:#F1453D;
     .wrapper{
         font-size:$font-size;
         display: inline-flex;
@@ -53,7 +46,7 @@ export default {
             padding:0 8px;
             font-size:inherit;
             &:hover{
-                border-color:$border-color-hover
+                border-color:$border-color-hover;
             }
             &:focus{
                 box-shadow: inset 0px 1px 3px $box-shadow-color;

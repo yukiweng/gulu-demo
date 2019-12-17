@@ -74,11 +74,6 @@
 </script>
 
 <style lang="scss" scoped>
-    $font-size: 14px;
-    $toast-bg: rgba(0, 0, 0, 0.6);
-    $toast-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
-    $toast-color: white;
-    $animation-duration:0.5s;
     @keyframes slide-down {
         0% {opacity: 0;transform: translateY(-100%)}
         100% {opacity: 1;transform: translateY(0)}
@@ -114,7 +109,7 @@
         min-height: 40px;
         font-size: $font-size;
         background: $toast-bg;
-        box-shadow: $toast-box-shadow;
+        box-shadow: 0px 0px 3px 0px $box-shadow-color;
         color: $toast-color;
         border-radius: 4px;
         padding: 0px 12px;

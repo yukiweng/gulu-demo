@@ -35,9 +35,6 @@
 </script>
 
 <style lang="scss" scoped>
-    $tabs-horizontal-height: 40px;
-    $blue: dodgerblue;
-    $tabs-vertical-height: 100px;
     .tabsHead {
         display: flex;
         justify-content: flex-start;

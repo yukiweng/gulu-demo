@@ -53,5 +53,4 @@
             flex-direction: row;
         }
     }
-
 </style>
