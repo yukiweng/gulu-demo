@@ -1,9 +1,11 @@
 {
-  "name": "yuki-test",
-  "version": "0.0.7",
+  "name": "yukiGulu",
+  "version": "1.0.0",
   "description": "这是一个UI框架",
-  "main": "dist/index.js",
+  "main": "dist/yukiGulu.umd.min.js",
   "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --target lib --name yukiGulu src/index.js",
     "dev-test": "parcel watch test/* --no-cache & karma start",
     "test": "parcel build test/* --no-minify && karma start --single-run",
     "docs:dev": "vuepress dev docs",
@@ -25,14 +27,19 @@
   },
   "homepage": "https://github.com/yukiweng/gulu-demo#readme",
   "dependencies": {
-    "chai-spies": "^1.0.0",
-    "sass": "^1.23.7",
-    "vue": "^2.6.10",
-    "vue-hot-reload-api": "^2.3.4"
+    "vue": "^2.6.10"
   },
   "devDependencies": {
+    "sass": "^1.23.7",
+    "@vue/cli-plugin-babel": "^3.12.1",
+    "@vue/cli-plugin-unit-mocha": "^3.12.1",
+    "@vue/cli-service": "^3.12.1",
     "@vue/component-compiler-utils": "^3.0.2",
+    "@vue/test-utils": "^1.0.0-beta.30",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-istanbul": "^5.1.0",
     "chai": "^4.2.0",
+    "chai-spies": "^1.0.0",
     "karma": "^4.4.1",
     "karma-chai": "^0.1.0",
     "karma-chai-spies": "^0.1.4",
@@ -41,10 +48,13 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-sinon-chai": "^2.0.2",
     "mocha": "^6.2.2",
-    "parcel-bundler": "^1.12.4",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
     "sinon": "^7.5.0",
     "sinon-chai": "^3.3.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.4",
+    "webpack": "4.41.3"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"
