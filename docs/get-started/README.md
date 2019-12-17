@@ -7,7 +7,7 @@ IE8及以上浏览器支持该样式
 *,*::before,*::after{box-sizing:border-box;} 
 ```
 
-引入scss文件
+引入yukiGulu.css
 ```js
 import 'yuki-gulu/dist/yukiGulu.css'
 ```
