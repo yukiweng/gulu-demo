@@ -1,33 +1,30 @@
-const expect = chai.expect;
-import Vue from 'vue'
-import CollapseItem from '../src/collapse/collapse-item'
-
-Vue.config.productionTip = false
-Vue.config.devtools = false
+import chai, {expect} from 'chai'
+import sinonChai from 'sinon-chai'
+import {mount} from '@vue/test-utils'
+import CollapseItem from '../../src/collapse/collapse-item'
+chai.use(sinonChai)
 
 describe('CollapseItem', () => {
     it('存在.', () => {
         expect(CollapseItem).to.exist
     })
     describe('props', () => {
-        const Constructor=Vue.extend(CollapseItem)
-        let vm
-        afterEach(()=>{vm.$destroy()})
         it('接收selected', () => {
-            vm=new Constructor({
+            const wrapper=mount(CollapseItem,{
                 propsData:{
                     title:'标题'
                 }
-            }).$mount()
+            })
+            const vm=wrapper.vm
             expect(vm.$refs.title.innerHTML.indexOf('标题')>=0).to.be.true
         })
         it('接收name', () => {
-
-            vm=new Constructor({
+            const wrapper=mount(CollapseItem,{
                 propsData:{
                     name:'test'
                 }
-            }).$mount()
+            })
+            const vm=wrapper.vm
             expect(vm.$el.getAttribute('name')).to.eq('test')
         })
     })
