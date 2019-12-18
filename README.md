@@ -3,6 +3,7 @@
 ## 介绍
 一个简单的UI框架
 ## 开始使用
+[使用文档](https://yukiweng.github.io/gulu-demo/)
 1. 使用本框架前，请在CSS中开启 border-box   
     IE8及以上浏览器支持该样式
 
