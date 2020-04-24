@@ -1,5 +1,5 @@
 ﻿# 一个 Vue UI 组件
-[![Build Status](https://www.travis-ci.org/yukiweng/gulu-demo.svg?branch=master)](https://www.travis-ci.org/yukiweng/gulu-demo)
+[![Build Status](https://www.travis-ci.org/yukiweng/yuki-gulu.svg?branch=master)](https://www.travis-ci.org/yukiweng/yuki-gulu)
 ## 介绍
 一个简单的UI框架
 ## 开始使用
