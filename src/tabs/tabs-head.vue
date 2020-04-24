@@ -43,11 +43,11 @@
 
         &.horizontal {
             flex-direction: row;
-            height: $tabs-horizontal-height;
+            height: 40px;
             > .line {
                 position: absolute;
                 bottom: 0px;
-                border-bottom: 1.5px solid $blue;
+                border-bottom: 1.5px solid dodgerblue;
                 transition: all 0.3s
             }
             > .actions {
@@ -58,11 +58,11 @@
 
         &.vertical {
             flex-direction: column;
-            height: $tabs-vertical-height;
+            height: 100px;
             > .line {
                 position: absolute;
                 right: 0;
-                border-left: 1.5px solid $blue;
+                border-left: 1.5px solid dodgerblue;
                 transition: all 0.3s
             }
             > .actions {

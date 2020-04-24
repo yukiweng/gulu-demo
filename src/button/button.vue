@@ -36,24 +36,24 @@
          100%{transform:rotate(360deg)}
     }
     .g-button {
-        height: $button-height;
-        font-size: $font-size;
+        height: 32px;
+        font-size: 14px;
         padding: 0 1em;
-        color: $color;
-        background: $button-bg;
-        border: 1px solid $border-color;
-        border-radius: $border-radius;
+        color: #333;
+        background: #fff;
+        border: 1px solid #999;
+        border-radius: 4px;
         display:inline-flex;
         justify-content: center;
         align-items:center;
         vertical-align: middle;
 
         &:hover {
-            border-color: $border-color-hover;
+            border-color: #666;
         } ;
 
         &:active {
-            background: $button-active-bg;
+            background: #eee;
         };
         >.icon{order:1;margin-right: 0.5em};
         > .content{order:2};

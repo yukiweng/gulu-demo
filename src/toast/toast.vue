@@ -92,25 +92,25 @@
         transform: translateX(-50%);
         &.position-top {
             top: 0;
-            > .toast {animation: slide-down $animation-duration;}
+            > .toast {animation: slide-down 0.5s;}
         }
         &.position-middle {
             top: 50%;
             transform: translate(-50%, -50%);
-            > .toast {animation: fade-in $animation-duration;}
+            > .toast {animation: fade-in 0.5s;}
         }
         &.position-bottom {
             bottom: 0;
-            > .toast {animation: slide-up $animation-duration;}
+            > .toast {animation: slide-up 0.5s;}
         }
     }
     .toast {
         line-height: 1.8;
         min-height: 40px;
-        font-size: $font-size;
-        background: $toast-bg;
-        box-shadow: 0px 0px 3px 0px $box-shadow-color;
-        color: $toast-color;
+        font-size: 14px;
+        background: rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.25);
+        color: white;
         border-radius: 4px;
         padding: 0px 12px;
         display: flex;
@@ -118,6 +118,7 @@
         > .close {
             margin-left: 12px;
             flex-shrink: 0;
+            cursor: pointer;
         }
         > .line {
             border-left: 1px solid #999;

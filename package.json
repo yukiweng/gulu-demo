@@ -1,11 +1,11 @@
 {
   "name": "yuki-gulu",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "这是一个UI框架",
-  "main": "dist/yukiGulu.umd.min.js",
+  "main": "dist/yuki-gulu.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name yukiGulu src/index.js",
+    "build": "vue-cli-service build --target lib --name yuki-gulu src/index.js",
     "test": "karma start --single-run",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yukiweng/gulu-demo.git"
+    "url": "git+https://github.com/yukiweng/yuki-gulu.git"
   },
   "keywords": [
     "vue",
@@ -22,14 +22,13 @@
   "author": "Yuki",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yukiweng/gulu-demo/issues"
+    "url": "https://github.com/yukiweng/yuki-gulu/issues"
   },
-  "homepage": "https://github.com/yukiweng/gulu-demo#readme",
+  "homepage": "https://github.com/yukiweng/yuki-gulu#readme",
   "dependencies": {
     "vue": "^2.6.10"
   },
   "devDependencies": {
-    "sass": "^1.23.7",
     "@vue/cli-plugin-babel": "^3.12.1",
     "@vue/cli-plugin-unit-mocha": "^3.12.1",
     "@vue/cli-service": "^3.12.1",
@@ -48,12 +47,14 @@
     "karma-spec-reporter": "*",
     "karma-webpack": "*",
     "mocha": "^6.2.2",
-    "node-sass": "^4.13.0",
-    "sass-loader": "^8.0.0",
+    "node-sass": "^4.13.1",
+    "sass": "^1.23.7",
+    "sass-loader": "^8.0.2",
     "sinon": "^7.5.0",
     "sinon-chai": "^3.3.0",
+    "vue-hot-reload-api": "^2.3.4",
     "vue-template-compiler": "^2.6.10",
-    "vue-hot-reload-api": "^2.3.4"
+    "vuepress": "^1.2.0"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"

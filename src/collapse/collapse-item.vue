@@ -67,14 +67,14 @@
 
 <style lang="scss" scoped>
     .collapseItem {
-        border: 1px solid $border-color;
+        border: 1px solid #999;
         &:first-child{
-            border-top-left-radius:$border-radius ;
-            border-top-right-radius:$border-radius ;
+            border-top-left-radius:4px ;
+            border-top-right-radius:4px ;
         }
         &:last-child{
-            border-bottom-left-radius:$border-radius ;
-            border-bottom-right-radius:$border-radius ;
+            border-bottom-left-radius:4px ;
+            border-bottom-right-radius:4px ;
 
         }
         &:not(:last-child){

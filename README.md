@@ -11,7 +11,7 @@
     *,*::before,*::after{box-sizing:border-box;} 
     ```
     
-2. 安装 yukiGulu
+2. 安装 yuki-gulu
     ```
     npm i --save yuki-gulu
     ```
@@ -27,9 +27,9 @@
         }
     }
     ```
-4. 引入yukiGulu.css
+4. 引入yuki-gulu.css
     ```js
-    import 'yuki-gulu/dist/yukiGulu.css'
+    import 'yuki-gulu/dist/yuki-gulu.css'
     ```
    
 **备注：**  

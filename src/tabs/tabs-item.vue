@@ -43,7 +43,7 @@
         padding:0.5em 1em;
         cursor: pointer;
         &.active{
-            color:$blue;
+            color:dodgerblue;
         }
     }
 </style>

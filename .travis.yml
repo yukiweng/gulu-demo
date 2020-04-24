@@ -1,9 +1,17 @@
-language: node_js
-node_js:
-  - "8"
-addons:
-  chrome: stable
-sudo: required
-before_script:
-  -   "sudo chown root /opt/google/chrome/chrome-sandbox"
-  -   "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
+{
+  "os": [
+    "linux"
+  ],
+  "sudo": true,
+  "addons": {
+    "chrome": "stable"
+  },
+  "node_js": [
+    "8"
+  ],
+  "language": "node_js",
+  "before_script": [
+    "sudo chown root /opt/google/chrome/chrome-sandbox",
+    "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
+  ]
+}

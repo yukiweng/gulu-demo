@@ -114,13 +114,13 @@
 
 <style lang="scss" scoped>
     .contentWrapper {
-        border: 1px solid $border-color;
-        border-radius: $border-radius;
+        border: 1px solid #999;
+        border-radius: 4px;
         max-width: 20em;
         padding: 0.5em 1em;
         position: absolute;
         word-break: break-all;
-        filter:drop-shadow(0 1px 1px $box-shadow-color);
+        filter:drop-shadow(0 1px 1px rgba(0,0,0,0.25));
         background: white;
         &::before,&::after{
             content: '';
@@ -136,7 +136,7 @@
                 border-bottom: none;
             }
             &::before{
-                border-top-color: $border-color;
+                border-top-color: #999;
                 top: 100%;
             }
             &::after{
@@ -151,7 +151,7 @@
                 border-top: none;
             }
             &::before{
-                border-bottom-color:$border-color;
+                border-bottom-color:#999;
                 bottom: 100%;
             }
             &::after{
@@ -168,7 +168,7 @@
                 top:50%;
             }
             &::before{
-                border-left-color:$border-color;
+                border-left-color:#999;
                 left: 100%;
             }
             &::after{
@@ -184,7 +184,7 @@
                 top:50%;
             }
             &::before{
-                border-right-color:$border-color;
+                border-right-color:#999;
                 right: 100%;
             }
             &::after{
