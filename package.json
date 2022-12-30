@@ -46,7 +46,7 @@
     "karma-sourcemap-loader": "*",
     "karma-spec-reporter": "*",
     "karma-webpack": "*",
-    "mocha": "^6.2.2",
+    "mocha": "^10.2.0",
     "node-sass": "^4.13.1",
     "sass": "^1.23.7",
     "sass-loader": "^8.0.2",
